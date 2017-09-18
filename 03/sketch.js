@@ -287,6 +287,7 @@ if (millis() > 12500 && millis() < 15000) {
 if (millis() > 12800 && millis() < 15000) {
    noStroke(); 
     fill(144, 255,182);
+   rect(0,134,104,15);
   }
 if (millis() > 13000 && millis() < 15000) {
    noStroke(); 
