@@ -45,47 +45,47 @@ var boton10tam = 30;
 
 var boton11x = 70;
 var boton11y = 20;
-var boton11tam = 30;
+var boton11tam = 35;
 
 var boton12x = 120;
 var boton12y = 20;
-var boton12tam = 30;
+var boton12tam = 35;
 
 var boton13x = 170;
 var boton13y = 20;
-var boton13tam = 30;
+var boton13tam = 35;
 
 var boton14x = 220;
 var boton14y = 20;
-var boton14tam = 30;
+var boton14tam = 35;
 
 var boton15x = 270;
 var boton15y = 20;
-var boton15tam = 30;
+var boton15tam = 35;
 
 var boton16x = 320;
 var boton16y = 20;
-var boton16tam = 30;
+var boton16tam = 35;
 
 var boton17x = 370;
 var boton17y = 20;
-var boton17tam = 30;
+var boton17tam = 35;
 
 var boton18x = 420;
 var boton18y = 20;
-var boton18tam = 30;
+var boton18tam = 35;
 
 var boton19x = 470;
 var boton19y = 20;
-var boton19tam = 30;
+var boton19tam = 35;
 
 var boton20x = 520;
 var boton20y = 20;
-var boton20tam = 30;
+var boton20tam = 35;
 
 var boton20x = 520;
 var boton20y = 20;
-var boton20tam = 30;
+var boton20tam = 35;
 
 //variables Borrador
 var boton21x = 530;
