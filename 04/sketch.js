@@ -628,15 +628,9 @@ function draw() {
    } 
      
   if (herramienta == 9) {
-     beginShape();
-    vertex(mouseX , mouseY);
-    vertex(mouseX +16 , mouseY);
-    vertex(mouseX+8, mouseY-12);
-    vertex(mouseX-15,mouseY+8);
-    vertex(mouseX+3,mouseY+12);
-    vertex(mouseX,mouseY-6);
-    vertex(mouseX-14,mouseY-12);
-    endShape();
+    strokeWeight(1);
+    line(mouseX, mouseY,pmouseX,pmouseY);
+     }
   }
 if (herramienta == 10) {
      arc(mouseX,mouseY, 22, 22, 0, PI+QUARTER_PI, PIE);
