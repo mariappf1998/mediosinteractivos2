@@ -634,7 +634,7 @@ function draw() {
     vertex(mouseX+8, mouseY-12);
     vertex(mouseX-15,mouseY+8);
     vertex(mouseX+3,mouseY+12);
-    vertex(mouseX+1,mouseY-6);
+    vertex(mouseX,mouseY-6);
     vertex(mouseX-14,mouseY-12);
     endShape();
   }
