@@ -85,7 +85,8 @@ function draw() {
    // filtro negativo pixeles
   if (mouseX > boton3x && mouseX < boton3x + boton3tam &&
       mouseY > boton3y && mouseY < boton3y + boton3tam) {
-    herramienta = 1;
+    //herramienta = 1;
+    filter(INVERT);
   }
     
  
@@ -103,28 +104,29 @@ function draw() {
   
  }    
 
-  if (herramienta == 1) {
-     strokeWeight(botonDiam);
+ // if (herramienta == 1) {
+     //strokeWeight(botonDiam);
     
-    strokeWeight(botonDiam);
-  paisaje.loadPixels();
-  var pix = paisaje.get(x,y);
-  print(pix);
-  var miRojo = pix [0];
-  var miVerde = pix [1];
-  var miAzul = pix [2];
-  var mitrans = pix [3];
+    
+  //strokeWeight(botonDiam);
+  //paisaje.loadPixels();
+  //var pix = paisaje.get(x,y);
+  //print(pix);
+  //var miRojo = pix [0];
+  //var miVerde = pix [1];
+  //var miAzul = pix [2];
+  //var mitrans = pix [3];
   
-  pix[0] = 255 - pix[0];
-  pix[1] = 255 - pix[1];
-  pix[2] = 255 - pix[2];
+  //pix[0] = 255 - pix[0];
+  //pix[1] = 255 - pix[1];
+  //pix[2] = 255 - pix[2];
  
   
-  paisaje.set(x,y,pix);
-  paisaje.updatePixels();
+  //paisaje.set(x,y,pix);
+  //paisaje.updatePixels();
 
-   x = x+1;
-     }
+   //x = x+1;
+     //}
   
   
 
