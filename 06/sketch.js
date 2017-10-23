@@ -21,10 +21,6 @@ var borradortam = 40;
 
 var miFiltro = 0;
 
-var botonDiam = 0;
-
-var herramienta = 0;
-
 function preload(){
   paisaje = loadImage("assets/foto.jpg");
   miFiltro = loadImage("assets/mascara.png"); 
@@ -47,12 +43,15 @@ function draw() {
 
    //botones de filtro
 
+  //boton filtro de tinta
   fill(206, 104, 0);
   rect(boton1x, boton1y, boton1tam, boton1tam);
 
+  //boton filtro de mascara
   fill(165, 111, 9);
   rect(boton2x, boton2y, boton2tam, boton2tam);
 
+  //boton filtro invertido
   fill(13, 145, 97);
   rect(boton3x, boton3y, boton3tam, boton3tam);
   
@@ -82,7 +81,7 @@ function draw() {
      paisaje.mask(miFiltro);
      }
    
-   // filtro negativo pixeles
+   // filtro negativo 
   if (mouseX > boton3x && mouseX < boton3x + boton3tam &&
       mouseY > boton3y && mouseY < boton3y + boton3tam) {
     //herramienta = 1;
@@ -104,29 +103,6 @@ function draw() {
   
  }    
 
- // if (herramienta == 1) {
-     //strokeWeight(botonDiam);
-    
-    
-  //strokeWeight(botonDiam);
-  //paisaje.loadPixels();
-  //var pix = paisaje.get(x,y);
-  //print(pix);
-  //var miRojo = pix [0];
-  //var miVerde = pix [1];
-  //var miAzul = pix [2];
-  //var mitrans = pix [3];
-  
-  //pix[0] = 255 - pix[0];
-  //pix[1] = 255 - pix[1];
-  //pix[2] = 255 - pix[2];
- 
-  
-  //paisaje.set(x,y,pix);
-  //paisaje.updatePixels();
-
-   //x = x+1;
-     //}
   
   
 
