@@ -21,7 +21,7 @@ var numMisiles = 0;
 
 //variables osos
 var miDepredador1 = [];
-var numDepredador1 = 2;
+var numDepredador1 = 10;
 //variables zorros
 var miDepredador2 = [];
 var numDepredador2 = 10;
@@ -60,7 +60,7 @@ function draw() {
   print(elHombre.viva);
 
   if (estado == INTRO) { //INTRO
-    
+
     background(miFondo);
 
 
@@ -77,7 +77,7 @@ function draw() {
 
     if (millis() > 20000) {
       estado = NIVEL2;
-      elHombre.viva=true;
+      elHombre.viva = true;
       puntaje = 0;
 
       tiempoActual = 0;
@@ -121,11 +121,11 @@ function draw() {
       elHombre.mostrar();
       elHombre.mover();
     }
-    if (elHombre.viva == false && tiempoActual> 1000) {
+    if (elHombre.viva == false && tiempoActual > 1000) {
       estado = PERDER;
     }
 
-   
+
 
     pop();
 
@@ -166,7 +166,7 @@ function draw() {
             miDepredador1[a].morir();
             puntaje = puntaje + 1;
             //console.log("puntaje=" + puntaje);
-            if (puntaje >= 2) {
+            if (puntaje >= 10) {
               estado = NIVEL3;
               miDepredador1[a].revivir();
               puntaje = 0;
@@ -207,7 +207,7 @@ function draw() {
     textAlign(CENTER);
     textSize(60);
     text("NIVEL 3", width / 2, height / 2);
-    
+
     textAlign(LEFT);
     textSize(40);
     text("P " + puntaje, 40, 40);
@@ -219,9 +219,9 @@ function draw() {
         var distCentro3 = dist(misiles[s].x, misiles[s].y, miDepredador2[c].x, miDepredador2[c].y);
         if (distCentro3 < miDepredador2[c].tamano / 2) {
           miDepredador2[c].morir();
-          
+
           puntaje = puntaje + 1;
-          if (puntaje >= 10) {
+          if (puntaje >= 30) {
             estado = GANAR;
             puntaje = 0;
           }
@@ -234,6 +234,8 @@ function draw() {
       var distCentro = dist(miDepredador2[f].x, miDepredador2[f].y, elHombre.x, elHombre.y);
       if (distCentro < miDepredador2[f].tamano / 2) {
         elHombre.morir();
+        miDepredador[f].x = random;
+         miDepredador[f].y = random;
       }
     }
     //funciones para osos
@@ -285,6 +287,14 @@ function draw() {
     textAlign(CENTER);
     textSize(60);
     text("GANASTEEE", width / 2, height / 2);
+    
+    fill(0);
+    textAlign(CENTER);
+    textSize(20);
+    text("Espera 40 segundos para volver a empezar", width / 2, height / 2+60);
+    
+    
+    
 
   } else { //PERDER
 
@@ -297,15 +307,12 @@ function draw() {
     textAlign(CENTER);
     textSize(60);
     text("PERDISTEE :(", width / 2, height / 2);
-
+    
     fill(255);
-    rect(boton1x, boton1y, boton1tam, boton1tam - 100);
-
-    fill(0);
-
-    textSize(30);
-    text("RESTART", width / 2 + 65, height / 2 + 150);
-
+    textAlign(CENTER);
+    textSize(20);
+    text("Espera 40 segundos para volver a empezar", width / 2, height / 2 + 60);
+    
 
   }
 }
@@ -317,20 +324,27 @@ function draw() {
 
 function mousePressed() {
   if (estado == INTRO) {
-    elHombre.viva=true;
-    estado = NIVEL1;
-  } else if (estado == PERDER) {
-    estado = INTRO;
-    puntaje = 0;
     elHombre.viva = true;
-    for (var a = 0; a < numDepredador1; a = a + 1) {
-      miDepredador1[a].viva = true;
-    }
-
-    //miDepredador2[c].viva=true;
-
-
+    estado = NIVEL1;
+  // } else if (estado == PERDER) {
+  //   estado = INTRO;
+  //   puntaje = 0;
+  //   elHombre.viva = true;
+  //   for (var a = 0; a < numDepredador1; a = a + 1) {
+  //     miDepredador1[a].viva = true;
+  //   }
+  // } else if (estado == GANAR) {
+  //   estado = INTRO;
+  //   puntaje = 0;
+  //   elHombre.viva = true;
+  //   for (var a = 0; a < numDepredador1; a = a + 1) {
+  //     miDepredador1[a].viva = true;
+  //     tiempoActual=0;
+  //   }
+  // }
+  //elHombre.viva = true;
   }
+ return false;
 }
 
 
@@ -375,8 +389,14 @@ function mouseDragged() {
     misiles[numMisiles] = new misil(velx, vely);
 
     numMisiles++;
+
   }
+
+  return false;
 }
+
+
+
 
 
 
@@ -473,8 +493,8 @@ function depredador1() {
       ellipse(this.x, this.y, this.tamano + 26, this.tamano + 26);
     }
   }
-  
-  this.revivir = function(){
+
+  this.revivir = function() {
     this.x = 0;
     this.y = 0;
   }
